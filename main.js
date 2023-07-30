@@ -103,11 +103,11 @@ function getDay(number) {
 function getIcon(string) {
     // Use if-else statements to determine the icon based on the weather string
     if (string === 'Rain') {
-        return '/img/rain.png';
+        return 'rain.png';
     } else if (string === 'Clear') {
-        return '/img/sun1.png';
+        return 'sun1.png';
     } else if (string === 'Clouds') {
-        return '/img/clouds.png';
+        return 'clouds.png';
     }
 }
 
