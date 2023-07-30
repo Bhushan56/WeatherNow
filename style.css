@@ -13,7 +13,7 @@ html {
 /* Apply background image to the entire page */
 .background-image {
     /* Set the background image and scale it to cover the container */
-    background-image: url('img/weather.jpg'); 
+    background-image: url('weather.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
