@@ -1,0 +1,389 @@
+/* Reset styles for margin, padding, and box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the base font size for responsive design */
+html {
+    font-size: 10px;
+}
+
+/* Apply background image to the entire page */
+.background-image {
+    /* Set the background image and scale it to cover the container */
+    background-image: url('img/weather.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* Absolute positioning to fill the entire container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250%;
+    /* Set the opacity of the background image for a subtle effect */
+    opacity: 0.5;
+    /* Place the background behind other elements */
+    z-index: -1;
+}
+
+/* Media queries for adjusting font size on smaller screens */
+@media only screen and (max-width: 600px) {
+    /* Adjust font size for smaller screens */
+    html {
+        font-size: 9px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    /* Additional adjustments for even smaller screens */
+    .temperatureMinMax {
+        flex-direction: column;
+    }
+
+    .searchBox {
+        padding: 0.5rem;
+    }
+}
+
+/* Global styles for body */
+body {
+    /* Apply a gradient background color */
+    background-image: linear-gradient(to right bottom, rgb(91, 91, 91), hwb(217 58% 35%));
+    background-position: fixed;
+    font-family: -apple-system, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Header styles */
+.navBar {
+    background-color: hsl(0, 0%, 5%);
+    position: fixed;
+    height: 6rem;
+    width: 100%;
+    box-shadow: 0px 0px 5px 5px hsla(0, 29%, 97%, 0.916);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBox {
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    text-align: center;
+    color: black;
+    outline: none;
+    background-color: #f1f2f6;
+    box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.199);
+    width: 30rem; /* Adjust the width to your preference */
+}
+
+
+.searchButton {
+    padding: 1rem 2rem;
+    background-color: rgb(186, 193, 188);
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+    background-color: hwb(109 4% 8% / 0.973);
+}
+
+.searchButton:focus {
+    outline: none;
+}
+
+/* Main Section */
+.mainSection {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.address {
+    margin-top: 8rem;
+    color: white;
+    font-size: 3.5rem;
+}
+
+.icon {
+    height: 6rem;
+    align-self: center;
+}
+
+.temperature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.temperature h1 {
+    color: white;
+    font-size: 8rem;
+    font-weight: 200;
+    margin: 0 2.5rem 0 2.5rem;
+}
+
+.units {
+    align-self: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+  }
+  
+.switch input {display:none;}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 7px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F29492;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}  
+input:checked + .slider {
+    background-color: #2C3A47;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}  
+input:checked + .slider:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(26px);
+    transform: translateX(2.7rem);
+}
+.slider:after{
+    content:'C';
+    color: white;
+    display: block;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    font-size: 1rem;
+}
+input:checked + .slider:after{  
+  content:'F';
+}
+.description{
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.temperatureMinMax{
+    display: flex;
+    margin-bottom: 1rem;
+}
+.temperatureMinMax p{
+    font-size: 1.3rem;
+    color: white;
+    letter-spacing: 1px;
+}
+.temperatureMinMax p:first-child{
+    margin-right: 2rem;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    font-weight: 200;
+}
+.day5{
+    margin: 1rem auto;
+    margin-bottom: 6rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.cards{
+    padding: 2rem;
+    height: 20rem;
+    width: 15rem;
+    margin: 2rem;
+    background-color: hsl(120, 1%, 15%);
+    border-radius: 2rem;
+    box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.438);
+    transition: all 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.cards:hover{
+    
+    background-color: rgb(199, 180, 177);
+    transform: translateY(-.5rem);
+}
+.icon1{
+    height: 5rem;
+}
+.icon2{
+    height: 5rem;
+}
+.icon3{
+    height: 5rem;
+}
+.icon4{
+    height: 5rem;
+}
+.icon5{
+    height: 5rem;
+}
+.icon8{
+    height: 5rem;
+    margin-right: 2rem;
+}
+.date{
+    color: #57606f;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.temp{
+    color: #57606f;
+    font-size: 3.5rem;
+    font-weight: 100;
+}
+.desc{
+    color: #57606f;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.footerDesign{
+    background-color: #070707;
+    height: 6rem;
+    width: 100%;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.171);
+    margin-top: 3rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerText{
+    width: 90%;
+    text-align: center;
+    padding-top: .5rem;
+}
+.footerText p{
+    color: white;
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+.detailsBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.flexes{
+    height: 30rem;
+    border-top: 1px solid white;
+    padding: 1rem;
+    flex: 0 0 27rem;
+    margin: 1rem;
+}
+.images{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    float: left;
+}
+.textArea{
+    width: 75%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.textArea h3, .column h3{
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: .5rem;
+}
+.column h4{
+    color: #ecf0f1;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+.iconText{
+    margin-bottom: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.textArea p, .para,.column p{
+    color: white;
+    font-size: 1.5rem;
+}
+.textArea p{
+    margin-bottom: 2rem;
+}
+.icon7{
+    width: 5rem;
+    margin: 1rem 2rem;
+}
+.cloud{
+    font-size: 6rem;
+    color: white;
+    font-weight: 100;
+    margin-bottom: .5rem;
+}
+.windSpeed,.windDegree, .rain{
+    color: white;
+    font-size: 3.3rem;
+    margin: 1rem;
+}
+.avgMaxTemp,.avgMinTemp{
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: white;
+}
