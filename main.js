@@ -1,5 +1,5 @@
 // Defining a constant variable to store the API key
-const API_KEY = `26d427cd145115abab09715730dc4e0d`;
+const API_KEY = '26d427cd145115abab09715730dc4e0d';
 
 // Adding an event listener to execute getWeather function when the DOM is loaded
 window.addEventListener('DOMContentLoaded', (e) => {
